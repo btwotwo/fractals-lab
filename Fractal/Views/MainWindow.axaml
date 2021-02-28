@@ -6,9 +6,9 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Fractal.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
-        
+        CanResize="False"
         Width="1200"
-        Height="450"
+        Height="800"
         Title="Fractal">
 
     <Design.DataContext>
@@ -26,24 +26,8 @@
   </Window.Styles>
   
   <Grid RowDefinitions="Auto,Auto">
-    <StackPanel Orientation="Vertical">
-      <StackPanel Margin="5,10,5,0" Orientation="Horizontal">
-        <Label>x0:</Label>
-        <NumericUpDown Name="MinX"></NumericUpDown>
-        <Label>y0:</Label>
-        <NumericUpDown Margin="0,0,100,0" Name="MinY"></NumericUpDown>
-
-        <Label>x:</Label>
-        <NumericUpDown Name="MaxX"></NumericUpDown>
-
-        <Label>y: </Label>
-        <NumericUpDown Name="MaxY"></NumericUpDown>
-
-        <Button Margin="20,0,0,0">Сгененировать</Button>
-      </StackPanel>
-
-      <Image Stretch="Uniform" Name="DisplayContainer"/>
-
-    </StackPanel>
+    <ContentControl Name="Content">
+      <Image Name="DisplayContainer" Stretch="UniformToFill"/>
+    </ContentControl>
   </Grid>    
 </Window>

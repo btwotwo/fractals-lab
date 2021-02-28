@@ -1,4 +1,5 @@
 using Avalonia.Media;
+using ReactiveUI;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,15 +8,6 @@ namespace Fractal.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        public string Greeting => "Welcome to Avalonia!";
-
-        public int MinX { get; set; }
-        public int MinY { get; set; }
-
-        public int MaxX { get; set; }
-        public int MaxY { get; set; }
-
-        public IImage? Fractal { get; set; } = new Mandelbrot().Generate(new(-2, -1), new(1, 1), new Offset(0, 0), 0);
-
+        public IImage? Fractal { get; set; } = new FractalSet().Generate(new(-1f, -0.7f), new(0.7f, 1f));
     }
 }
